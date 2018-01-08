@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Page Accueil</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem value="Accueil" url="accueil.xhtml" />
+			<p:menuitem value="Ajout" url="ajout.xhtml" />
+			<p:menuitem value="Modification" url="modif.xhtml" />
+			<p:menuitem value="Supprission" url="supprime.xhtml" />
+			<p:menuitem value="Recherche" url="recherche.xhtml" />
+		</p:breadCrumb>
+	</h:form> 
+	<p:spacer height="10px"/>
+	<p:separator/>
+	
+	<h1 style="text-align: center; color: red">Liste des Voitures</h1>
+	<p:dataTable var="car" value="#{sessionScope.voituresList}">
+		<p:column headerText="ID">
+			<h:outputText value="#{car.id}" />
+		</p:column>
+
+		<p:column headerText="Marque">
+			<h:outputText value="#{car.marque}" />
+		</p:column>
+
+		<p:column headerText="Type">
+			<h:outputText value="#{car.type}" />
+		</p:column>
+
+		<p:column headerText="N° Serie">
+			<h:outputText value="#{car.numSerie}" />
+		</p:column>
+
+		<p:column headerText="ID Agent">
+			<h:outputText value="#{car.agent.id}" />
+		</p:column>
+
+	</p:dataTable>
+
+</h:body>
+</html>
